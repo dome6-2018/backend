@@ -1,0 +1,11 @@
+<div class="sidebar no-print">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            <li class="nav-item nav-dropdown" routerLinkActive="open" *ngFor='let page of pages'>
+                <a *ngIf="roleService.isPageIsAccessible(page, role)" [routerLink]="[page.url]" class="nav-link"
+                   href="#"><i class="{{page.icon}}"></i>{{page.name}}</a>
+            </li>
+        </ul>
+    </nav>
+    <button appSidebarMinimizer class="sidebar-minimizer" type="button"></button>
+</div>

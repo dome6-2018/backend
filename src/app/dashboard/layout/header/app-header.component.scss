@@ -1,0 +1,28 @@
+.app-header {
+    padding: 0 15px !important;
+}
+
+header.navbar .navbar-brand {
+    padding: 5px;
+    margin-left: -12px;
+    background-image: none;
+
+    .brand-name {
+        line-height: 43px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.nav-item-custom {
+    font-size: 15px;
+}
+
+.badge-premium {
+    border-radius: 25px;
+    /* text-shadow: 1px 1px 2px #BF7F00, -1px -1px 2px #BF7F00; */
+    padding: 6px;
+    color: #c3a343;
+    /* -webkit-text-fill-color: transparent; */
+    -webkit-background-clip: text;
+}

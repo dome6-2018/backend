@@ -1,0 +1,30 @@
+<header class="app-header navbar">
+    <button class="navbar-toggler d-lg-none" type="button" appMobileSidebarToggler>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a [routerLink]="['/app']" class="navbar-brand" href="#">
+        <img class="brand-logo d-inline-block align-top" height="45" width="45" src="/assets/img/logo.svg" alt="logo">
+        <span class="brand-name">CareerManager</span>
+        <span [hidden]="user.premiumSubscription == null"
+              class="badge badge-premium">Premium</span>
+    </a>
+
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown d-md-down-none" dropdown placement="bottom right">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" dropdownToggle
+               (click)="false">
+                <img *ngIf="user.photoUrl" [src]="user.photoUrl" class="img-avatar" alt="user icon">
+                <img *ngIf="!user.photoUrl" src="assets/img/avatars/user-icon.jpg" class="img-avatar" alt="user icon">
+                <span class="hidden-md-down">{{ user.firstname }} {{ user.lastname }}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+                <a class="dropdown-item" [routerLink]="['/app/profile']" href="#"><i class="fa fa-user"></i> Profil</a>
+                <div class="divider"></div>
+                <a class="dropdown-item" (click)="logout()" [routerLink]="['/']" href="#">
+                    <i class="fa fa-lock"></i> Déconnexion
+                </a>
+            </div>
+        </li>
+    </ul>
+</header>

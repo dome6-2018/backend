@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+        <span>Menu</span>
+    </div>
+    <div>
+        <ul class="profile-menu">
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/app/profile/infos']">
+                    <i class="fa fa-user fa-fw"></i>Informations personnelles
+                </a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/app/profile/password']">
+                    <i class="fa fa-lock fa-fw"></i>Mot de passe
+                </a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/app/profile/webmail']">
+                    <i class="fa fa-envelope fa-fw"></i>Configuration de la webmail
+                </a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/app/profile/premium']">
+                    <i class=" fa fa-plus-circle fa-fw"></i><span class="premium-menu">Premium</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

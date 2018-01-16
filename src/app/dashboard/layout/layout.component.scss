@@ -1,0 +1,16 @@
+.breadcrumb-item {
+    float: left;
+}
+
+.required {
+    label:after {
+        content: " *";
+        color: red;
+    }
+}
+
+@media print{
+    .no-print{
+        display: none !important;
+    }
+}

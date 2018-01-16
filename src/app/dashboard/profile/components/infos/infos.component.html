@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-md-3">
+        <app-profile-menu></app-profile-menu>
+    </div>
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-header">
+                <span>Informations personnelles</span>
+            </div>
+            <div *ngIf="profile != null" class="card-block">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img class="profile-picture" *ngIf="!profile.photoUrl && !tempPhoto" alt="default picture"
+                                 src="assets/img/avatars/user-icon.jpg"/>
+                            <img class="profile-picture" *ngIf="tempPhoto" alt="profile picture" [src]="tempPhoto"/>
+                            <img class="profile-picture" *ngIf="profile.photoUrl && !tempPhoto" alt="profile picture"
+                                 [src]="profile.photoUrl"/>
+                            <span class="username">{{ profile.firstname }} {{ profile.lastname }}</span>
+                            <br>
+                            <div class="file-upload btn btn-primary" *ngIf="!tempPhoto">
+                                <span>Changer l'image</span>
+                                <input class="upload" type="file" accept="image/*"
+                                       (change)="uploadPhotoListener($event)">
+                            </div>
+                            <button class="btn btn-success" *ngIf="tempPhoto" (click)="sendPhotoProfile()">Valider
+                                l'image
+                            </button>
+                            <button class="btn btn-default" *ngIf="profile.photoUrl || tempPhoto"
+                                    (click)="deleteImage()">Supprimer l'image
+                            </button>
+                            <br><br>
+                            Taille : 50x50 min / 400x400 max
+                            <br>
+                            Poids : 2 Mio max
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <form id="infos-perso">
+                            <div class="form-group required">
+                                <label for="username">Nom d'utilisateur</label>
+                                <input type="text" id="username" name="username" class="form-control"
+                                       [(ngModel)]="profile.username" required>
+                            </div>
+                            <div class="form-group required">
+                                <label for="civility">Civilité</label>
+                                <select [(ngModel)]="profile.civility" id="civility" name="civility"
+                                        class="form-control" required>
+                                    <option [ngValue]="0">Monsieur</option>
+                                    <option [ngValue]="1">Madame</option>
+                                </select>
+                            </div>
+                            <div class="form-group required">
+                                <label for="lastname">Nom</label>
+                                <input type="text" id="lastname" name="lastname" class="form-control"
+                                       [(ngModel)]="profile.lastname" required>
+                            </div>
+                            <div class="form-group required">
+                                <label for="firstname">Prénom</label>
+                                <input type="text" id="firstname" name="firstname" class="form-control"
+                                       [(ngModel)]="profile.firstname" required>
+                            </div>
+                            <div class="form-group required">
+                                <label for="birthdate">Date de naissance</label>
+                                <input type="date" id="birthdate" name="birthdate" class="form-control"
+                                       [(ngModel)]="profile.birthDate" useValueAsDate required>
+                            </div>
+                            <div class="form-group">
+                                <label for="addressPart1">Adresse 1</label>
+                                <input type="text" id="addressPart1" name="addressPart1" class="form-control"
+                                       [(ngModel)]="profile.addressPart1">
+                            </div>
+                            <div class="form-group">
+                                <label for="addressPart2">Adresse 2</label>
+                                <input type="text" id="addressPart2" name="addressPart2" class="form-control"
+                                       [(ngModel)]="profile.addressPart2">
+                            </div>
+                            <div class="form-group">
+                                <label for="postalCode">Code postal</label>
+                                <input type="text" id="postalCode" name="postalCode" class="form-control"
+                                       [(ngModel)]="profile.postalCode">
+                            </div>
+                            <div class="form-group">
+                                <label for="town">Ville</label>
+                                <input type="text" id="town" name="town" class="form-control"
+                                       [(ngModel)]="profile.town.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Pays</label>
+                                <input type="text" id="country" name="country" class="form-control"
+                                       [(ngModel)]="profile.country.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Numéro de téléphone</label>
+                                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
+                                       [(ngModel)]="profile.phoneNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="websiteUrl">Site internet</label>
+                                <input type="text" id="websiteUrl" name="websiteUrl" class="form-control"
+                                       [(ngModel)]="profile.websiteUrl">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger">Supprimer le compte</button>
+                <button (click)="validateButton()" class="btn btn-primary pull-right">Valider</button>
+            </div>
+        </div>
+    </div>
+</div>
