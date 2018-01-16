@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
         this.userService.delete();
     }
 
-    login(event, email, password) {
+    login(event, username, password) {
         event.preventDefault();
 
         const formData = new FormData();
-        formData.append('email', email);
+        formData.append('username', username);
         formData.append('password', password);
 
         this.httpRestService.postFormData(environment.apiUrl + '/login', formData).subscribe(

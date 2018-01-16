@@ -43,14 +43,6 @@
                                        [(ngModel)]="profile.username" required>
                             </div>
                             <div class="form-group required">
-                                <label for="civility">Civilité</label>
-                                <select [(ngModel)]="profile.civility" id="civility" name="civility"
-                                        class="form-control" required>
-                                    <option [ngValue]="0">Monsieur</option>
-                                    <option [ngValue]="1">Madame</option>
-                                </select>
-                            </div>
-                            <div class="form-group required">
                                 <label for="lastname">Nom</label>
                                 <input type="text" id="lastname" name="lastname" class="form-control"
                                        [(ngModel)]="profile.lastname" required>
@@ -60,53 +52,9 @@
                                 <input type="text" id="firstname" name="firstname" class="form-control"
                                        [(ngModel)]="profile.firstname" required>
                             </div>
-                            <div class="form-group required">
-                                <label for="birthdate">Date de naissance</label>
-                                <input type="date" id="birthdate" name="birthdate" class="form-control"
-                                       [(ngModel)]="profile.birthDate" useValueAsDate required>
-                            </div>
-                            <div class="form-group">
-                                <label for="addressPart1">Adresse 1</label>
-                                <input type="text" id="addressPart1" name="addressPart1" class="form-control"
-                                       [(ngModel)]="profile.addressPart1">
-                            </div>
-                            <div class="form-group">
-                                <label for="addressPart2">Adresse 2</label>
-                                <input type="text" id="addressPart2" name="addressPart2" class="form-control"
-                                       [(ngModel)]="profile.addressPart2">
-                            </div>
-                            <div class="form-group">
-                                <label for="postalCode">Code postal</label>
-                                <input type="text" id="postalCode" name="postalCode" class="form-control"
-                                       [(ngModel)]="profile.postalCode">
-                            </div>
-                            <div class="form-group">
-                                <label for="town">Ville</label>
-                                <input type="text" id="town" name="town" class="form-control"
-                                       [(ngModel)]="profile.town.name">
-                            </div>
-                            <div class="form-group">
-                                <label for="country">Pays</label>
-                                <input type="text" id="country" name="country" class="form-control"
-                                       [(ngModel)]="profile.country.name">
-                            </div>
-                            <div class="form-group">
-                                <label for="phoneNumber">Numéro de téléphone</label>
-                                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
-                                       [(ngModel)]="profile.phoneNumber">
-                            </div>
-                            <div class="form-group">
-                                <label for="websiteUrl">Site internet</label>
-                                <input type="text" id="websiteUrl" name="websiteUrl" class="form-control"
-                                       [(ngModel)]="profile.websiteUrl">
-                            </div>
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-danger">Supprimer le compte</button>
-                <button (click)="validateButton()" class="btn btn-primary pull-right">Valider</button>
             </div>
         </div>
     </div>
