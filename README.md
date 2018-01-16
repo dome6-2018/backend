@@ -1,4 +1,4 @@
-# Career Manager
+# LudiStreet Backend
 
 ## Pré-requis
 Installer `npm`
@@ -22,18 +22,3 @@ Une autre commande peut aussi être utilisé : `ng generate directive/pipe/servi
 ## Export
 Exécuter `ng build` pour exporter le projet (par exemple sur un serveur local)
 Les fichier seront généré dans le dossier `dist/`.
- 
-## Exécyter les tests unitaires 
-Exécuter `ng test` pour exécuter les tests unitaires via [Karma](https://karma-runner.github.io).
-
-## Exécuter les tests "end-to-end"
-
-Exécuter `ng e2e`pour exécuter les tests "end-to-end" via [Protractor](http://www.protractortest.org/). 
-Avant d'éxécuter les tests vérifiez que l'application est en route avec `ng serve`.
-
-## Auteurs
-AFSHARI Mickael
-
-GOMOND Jean-Baptiste
-
-HOSOMI Kenzo

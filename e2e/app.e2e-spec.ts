@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('careermanager-frontend App', () => {
+describe('LudiStreet-backend App', () => {
   let page: AppPage;
 
   beforeEach(() => {
