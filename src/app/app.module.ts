@@ -26,6 +26,7 @@ import {NAV_DROPDOWN_DIRECTIVES} from './dashboard/layout/directives/nav-dropdow
 import {SIDEBAR_TOGGLE_DIRECTIVES} from './dashboard/layout/directives/sidebar/sidebar.directive';
 import {PipeKeyModule} from './common/pipes/keys.pipe';
 import {NgPipesModule} from 'ngx-pipes';
+import {HttpRestService} from './common/services/http-rest.service';
 
 @NgModule({
     declarations: [
@@ -57,6 +58,7 @@ import {NgPipesModule} from 'ngx-pipes';
     providers: [
         TokenService,
         UserService,
+        HttpRestService,
         CanActivateAuthGuard
     ],
     bootstrap: [AppComponent]
